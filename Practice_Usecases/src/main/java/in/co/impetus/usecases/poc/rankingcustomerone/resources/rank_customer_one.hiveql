@@ -1,0 +1,8 @@
+SELECT c.custid, c.score                
+FROM rank_customer c                                
+ORDER BY c.custid ASC, c.score DESC;
+
+
+## TO OBTAIN THE RANK OF CUSTOMERS BASED ON THEIR SCORES
+
+SELECT custid, score, rank() over(PARTITION BY custid  ORDER BY score DESC ) AS myRank FROM rank_customer; 

@@ -1,0 +1,6 @@
+UserId:: MOvieID:: Rating:: TimeStamp
+
+Use case 1: List all the movies and the number of ratings
+Mapper <Offset, Text[Each line], MovieId: Int, Rating: Int>
+
+Reducer<MovieId: Int, Ratings:Iterable:: list, MovieId:Text , total rting: Int>

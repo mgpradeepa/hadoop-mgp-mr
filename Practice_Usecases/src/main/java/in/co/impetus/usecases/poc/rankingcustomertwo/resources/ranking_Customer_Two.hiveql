@@ -1,0 +1,8 @@
+SELECT c.custid, c.score, c.location                
+ FROM rank_customer c                                
+ORDER BY c.custid ASC, c.location ASC, c.score DESC;
+
+
+## FOR OBTINING THE RANKING ON THE BASIS OF LOCATION AND CUSTOMER ID AS PER THE REQUIREMENT
+
+SELECT custid, score, location, rank() over(PARTITION BY custid, location  ORDER BY score DESC ) AS myrank FROM rank_customer;
